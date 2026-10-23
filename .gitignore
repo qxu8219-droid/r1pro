@@ -1,0 +1,15 @@
+# 忽略当前不需要上传的内容
+deliverables/
+r1pro_offline_bundle_20261022/
+.agents/
+skills-lock.json
+
+# Generated runtime and simulation artifacts
+.tools/
+.venvs/
+.cache/
+outputs/
+__pycache__/
+.pytest_cache/
+reports/**/*.log
+reports/**/*.png
