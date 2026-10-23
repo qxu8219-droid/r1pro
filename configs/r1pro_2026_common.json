@@ -1,0 +1,1801 @@
+{
+  "source_sha256": "197091db1515a7326ad363b7f9894b3d847518120397f306d001c6ef1218d2e9",
+  "base": "base_link",
+  "drive_type": "force",
+  "self_collision": false,
+  "contact_material": {
+    "static_friction": 0.8,
+    "dynamic_friction": 0.6,
+    "restitution": 0.0,
+    "provenance": "simulation assumption, not measured"
+  },
+  "joints": {
+    "steer_motor_joint1": {
+      "type": "revolute",
+      "limit": {
+        "lower": -3.1416,
+        "upper": 3.1416,
+        "effort": 50.0,
+        "velocity": 20.0
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 50.0,
+      "max_velocity": 20.0,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "wheel_motor_joint1": {
+      "type": "continuous",
+      "limit": {},
+      "stiffness": 0,
+      "damping": 100,
+      "max_force": 10,
+      "max_velocity": 8,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "simulation assumption (wheel missing URDF ratings)"
+    },
+    "steer_motor_joint2": {
+      "type": "revolute",
+      "limit": {
+        "lower": -3.1416,
+        "upper": 3.1416,
+        "effort": 50.0,
+        "velocity": 20.0
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 50.0,
+      "max_velocity": 20.0,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "wheel_motor_joint2": {
+      "type": "continuous",
+      "limit": {},
+      "stiffness": 0,
+      "damping": 100,
+      "max_force": 10,
+      "max_velocity": 8,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "simulation assumption (wheel missing URDF ratings)"
+    },
+    "steer_motor_joint3": {
+      "type": "revolute",
+      "limit": {
+        "lower": -3.1416,
+        "upper": 3.1416,
+        "effort": 50.0,
+        "velocity": 20.0
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 50.0,
+      "max_velocity": 20.0,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "wheel_motor_joint3": {
+      "type": "continuous",
+      "limit": {},
+      "stiffness": 0,
+      "damping": 100,
+      "max_force": 10,
+      "max_velocity": 8,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "simulation assumption (wheel missing URDF ratings)"
+    },
+    "torso_joint1": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.1170467075,
+        "upper": 1.8151467075,
+        "effort": 100.0,
+        "velocity": 2.5
+      },
+      "stiffness": 5000,
+      "damping": 200,
+      "max_force": 100.0,
+      "max_velocity": 2.5,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "torso_joint2": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.7750467075,
+        "upper": 2.5132467075,
+        "effort": 100.0,
+        "velocity": 2.5
+      },
+      "stiffness": 5000,
+      "damping": 200,
+      "max_force": 100.0,
+      "max_velocity": 2.5,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "torso_joint3": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.8151467075,
+        "upper": 1.5533467075,
+        "effort": 100.0,
+        "velocity": 2.5
+      },
+      "stiffness": 5000,
+      "damping": 200,
+      "max_force": 100.0,
+      "max_velocity": 2.5,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "torso_joint4": {
+      "type": "revolute",
+      "limit": {
+        "lower": -3.0368467075,
+        "upper": 3.0368467075,
+        "effort": 100.0,
+        "velocity": 2.5
+      },
+      "stiffness": 5000,
+      "damping": 200,
+      "max_force": 100.0,
+      "max_velocity": 2.5,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint1": {
+      "type": "revolute",
+      "limit": {
+        "lower": -4.4331467075,
+        "upper": 1.2915467075,
+        "effort": 55.0,
+        "velocity": 7.1209
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 55.0,
+      "max_velocity": 7.1209,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint2": {
+      "type": "revolute",
+      "limit": {
+        "lower": -0.1570467075,
+        "upper": 3.1241467075,
+        "effort": 55.0,
+        "velocity": 7.1209
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 55.0,
+      "max_velocity": 7.1209,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint3": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.3387427075,
+        "upper": 2.3387427075,
+        "effort": 25.0,
+        "velocity": 8.3776
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 25.0,
+      "max_velocity": 8.3776,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint4": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.0769467075,
+        "upper": 0.3316467075,
+        "effort": 25.0,
+        "velocity": 8.3776
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 25.0,
+      "max_velocity": 8.3776,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint5": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.3387427075,
+        "upper": 2.3387427075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint6": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.0297447075,
+        "upper": 1.0297447075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_arm_joint7": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.5533467075,
+        "upper": 1.5533467075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_gripper_finger_joint1": {
+      "type": "prismatic",
+      "limit": {
+        "lower": 0.0,
+        "upper": 0.05,
+        "effort": 100.0,
+        "velocity": 0.25
+      },
+      "stiffness": 2000,
+      "damping": 100,
+      "max_force": 100.0,
+      "max_velocity": 0.25,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "left_gripper_finger_joint2": {
+      "type": "prismatic",
+      "limit": {
+        "lower": -0.05,
+        "upper": 0.0,
+        "effort": 100.0,
+        "velocity": 0.25
+      },
+      "stiffness": 2000,
+      "damping": 100,
+      "max_force": 100.0,
+      "max_velocity": 0.25,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint1": {
+      "type": "revolute",
+      "limit": {
+        "lower": -4.4331467075,
+        "upper": 1.2915467075,
+        "effort": 55.0,
+        "velocity": 7.1209
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 55.0,
+      "max_velocity": 7.1209,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint2": {
+      "type": "revolute",
+      "limit": {
+        "lower": -3.1241467075,
+        "upper": 0.1570467075,
+        "effort": 55.0,
+        "velocity": 7.1209
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 55.0,
+      "max_velocity": 7.1209,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint3": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.3387427075,
+        "upper": 2.3387427075,
+        "effort": 25.0,
+        "velocity": 8.3776
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 25.0,
+      "max_velocity": 8.3776,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint4": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.0769467075,
+        "upper": 0.3316467075,
+        "effort": 25.0,
+        "velocity": 8.3776
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 25.0,
+      "max_velocity": 8.3776,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint5": {
+      "type": "revolute",
+      "limit": {
+        "lower": -2.3387427075,
+        "upper": 2.3387427075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint6": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.0297447075,
+        "upper": 1.0297447075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_arm_joint7": {
+      "type": "revolute",
+      "limit": {
+        "lower": -1.5533467075,
+        "upper": 1.5533467075,
+        "effort": 18.0,
+        "velocity": 10.472
+      },
+      "stiffness": 3000,
+      "damping": 100,
+      "max_force": 18.0,
+      "max_velocity": 10.472,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_gripper_finger_joint1": {
+      "type": "prismatic",
+      "limit": {
+        "lower": 0.0,
+        "upper": 0.05,
+        "effort": 100.0,
+        "velocity": 0.25
+      },
+      "stiffness": 2000,
+      "damping": 100,
+      "max_force": 100.0,
+      "max_velocity": 0.25,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    },
+    "right_gripper_finger_joint2": {
+      "type": "prismatic",
+      "limit": {
+        "lower": -0.05,
+        "upper": 0.0,
+        "effort": 100.0,
+        "velocity": 0.25
+      },
+      "stiffness": 2000,
+      "damping": 100,
+      "max_force": 100.0,
+      "max_velocity": 0.25,
+      "drive_provenance": "simulation tuning, not measured",
+      "limits_provenance": "vendor URDF"
+    }
+  },
+  "links": {
+    "base_link": {
+      "name": "base_link",
+      "mass_kg": 47.63,
+      "inertia": [
+        [
+          1.5812,
+          -1.0625e-05,
+          0.053601
+        ],
+        [
+          -1.0625e-05,
+          1.4648,
+          5.7054e-06
+        ],
+        [
+          0.053601,
+          5.7054e-06,
+          2.835
+        ]
+      ],
+      "principal_inertia": [
+        1.464799998946673,
+        1.5789126861571638,
+        2.8372873148961637
+      ],
+      "origin": {
+        "xyz": "-0.049262 -8.8054E-05 0.18255",
+        "rpy": "0 0 0"
+      }
+    },
+    "steer_motor_link1": {
+      "name": "steer_motor_link1",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.000212162349149489,
+          -2.97520144470236e-07,
+          -4.42683116038741e-08
+        ],
+        [
+          -2.97520144470236e-07,
+          0.000316954731393744,
+          1.69403784664349e-06
+        ],
+        [
+          -4.42683116038741e-08,
+          1.69403784664349e-06,
+          0.000162145991172289
+        ]
+      ],
+      "principal_inertia": [
+        0.00016212742229537044,
+        0.00021216153556811667,
+        0.00031697411385203504
+      ],
+      "origin": {
+        "xyz": "5.31952128381835E-05 -0.00624267209457385 -0.0555396404916644",
+        "rpy": "0 0 0"
+      }
+    },
+    "wheel_motor_link1": {
+      "name": "wheel_motor_link1",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.000710603853748414,
+          7.85189820792754e-11,
+          1.11318268524093e-16
+        ],
+        [
+          7.85189820792754e-11,
+          0.00127839921881604,
+          8.41061935635787e-10
+        ],
+        [
+          1.11318268524093e-16,
+          8.41061935635787e-10,
+          0.000710603853749644
+        ]
+      ],
+      "principal_inertia": [
+        0.000710603853748395,
+        0.0007106038537484063,
+        0.0012783992188172971
+      ],
+      "origin": {
+        "xyz": "-4.31647634302479E-10 -0.00307552350808771 -4.57241716017576E-09",
+        "rpy": "0 0 0"
+      }
+    },
+    "steer_motor_link2": {
+      "name": "steer_motor_link2",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.00021216234914949,
+          -2.97520144470226e-07,
+          -4.42683116038049e-08
+        ],
+        [
+          -2.97520144470226e-07,
+          0.000316954731393744,
+          1.69403784664346e-06
+        ],
+        [
+          -4.42683116038049e-08,
+          1.69403784664346e-06,
+          0.000162145991172289
+        ]
+      ],
+      "principal_inertia": [
+        0.0001621274222953704,
+        0.00021216153556811776,
+        0.0003169741138520348
+      ],
+      "origin": {
+        "xyz": "5.31952128382251E-05 -0.00624267209457396 -0.0555396404916645",
+        "rpy": "0 0 0"
+      }
+    },
+    "wheel_motor_link2": {
+      "name": "wheel_motor_link2",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.000454213979130143,
+          5.24020921496857e-11,
+          7.75819367993004e-17
+        ],
+        [
+          5.24020921496857e-11,
+          0.000833150371731175,
+          5.61309532097866e-10
+        ],
+        [
+          7.75819367993004e-17,
+          5.61309532097866e-10,
+          0.000454213979130967
+        ]
+      ],
+      "principal_inertia": [
+        0.0004542139791301355,
+        0.0004542139791301357,
+        0.000833150371732014
+      ],
+      "origin": {
+        "xyz": "-1.4675094472949E-11 0 -3.29134289267508E-11",
+        "rpy": "0 0 0"
+      }
+    },
+    "steer_motor_link3": {
+      "name": "steer_motor_link3",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.000212162349149397,
+          -2.97520275092032e-07,
+          4.42674300884034e-08
+        ],
+        [
+          -2.97520275092032e-07,
+          0.000316954741430712,
+          -1.69357916386513e-06
+        ],
+        [
+          4.42674300884034e-08,
+          -1.69357916386513e-06,
+          0.000162145981135063
+        ]
+      ],
+      "principal_inertia": [
+        0.00016212742229531333,
+        0.0002121615355680278,
+        0.00031697411385183115
+      ],
+      "origin": {
+        "xyz": "-5.31952127936219E-05 0.00624283665297075 -0.0555396219949674",
+        "rpy": "0 0 0"
+      }
+    },
+    "wheel_motor_link3": {
+      "name": "wheel_motor_link3",
+      "mass_kg": 1.5,
+      "inertia": [
+        [
+          0.000454213979130143,
+          5.24040985541527e-11,
+          7.72042152127217e-17
+        ],
+        [
+          5.24040985541527e-11,
+          0.000833150371731176,
+          5.6144107745668e-10
+        ],
+        [
+          7.72042152127217e-17,
+          5.6144107745668e-10,
+          0.000454213979130968
+        ]
+      ],
+      "principal_inertia": [
+        0.00045421397913013545,
+        0.0004542139791301365,
+        0.0008331503717320158
+      ],
+      "origin": {
+        "xyz": "1.46749834506466E-11 8.53576078248493E-17 -3.29135607657349E-11",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_chassis_front_left_link": {
+      "name": "camera_chassis_front_left_link",
+      "mass_kg": 0.05,
+      "inertia": [
+        [
+          4.54462832821697e-06,
+          2.03952399181456e-08,
+          1.67430008009798e-07
+        ],
+        [
+          2.03952399181456e-08,
+          4.61003273012912e-06,
+          2.48039176489353e-13
+        ],
+        [
+          1.67430008009798e-07,
+          2.48039176489353e-13,
+          3.41171862304012e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.387485612723389e-06,
+        4.5606114156882876e-06,
+        4.6182826529745305e-06
+      ],
+      "origin": {
+        "xyz": "0.000323277835475755 4.78149991822718E-10 -0.0219882579639348",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_chassis_front_right_link": {
+      "name": "camera_chassis_front_right_link",
+      "mass_kg": 0.05,
+      "inertia": [
+        [
+          4.54462832821697e-06,
+          2.03952399181457e-08,
+          1.67430008009797e-07
+        ],
+        [
+          2.03952399181457e-08,
+          4.61003273012912e-06,
+          2.48039176906879e-13
+        ],
+        [
+          1.67430008009797e-07,
+          2.48039176906879e-13,
+          3.41171862304012e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.3874856127233895e-06,
+        4.560611415688287e-06,
+        4.618282652974531e-06
+      ],
+      "origin": {
+        "xyz": "0.000323277835475755 4.78150019578294E-10 -0.0219882579639348",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_chassis_left_link": {
+      "name": "camera_chassis_left_link",
+      "mass_kg": 0.025,
+      "inertia": [
+        [
+          4.54462838864579e-06,
+          2.03953368113986e-08,
+          1.67430008011223e-07
+        ],
+        [
+          2.03953368113986e-08,
+          4.61003266969992e-06,
+          3.62251115376211e-20
+        ],
+        [
+          1.67430008011223e-07,
+          3.62251115376211e-20,
+          3.41171862304048e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.3874856127233823e-06,
+        4.560611415688281e-06,
+        4.618282652974529e-06
+      ],
+      "origin": {
+        "xyz": "0.000323277835185057 1.11022302462516E-16 -0.0219882579639346",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_chassis_right_link": {
+      "name": "camera_chassis_right_link",
+      "mass_kg": 0.025,
+      "inertia": [
+        [
+          4.5446283886458e-06,
+          2.03953368114121e-08,
+          1.67430008011224e-07
+        ],
+        [
+          2.03953368114121e-08,
+          4.61003266969992e-06,
+          2.48543378706463e-21
+        ],
+        [
+          1.67430008011224e-07,
+          2.48543378706463e-21,
+          3.41171862304049e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.387485612723392e-06,
+        4.5606114156882825e-06,
+        4.618282652974536e-06
+      ],
+      "origin": {
+        "xyz": "0.000323277835185057 5.55111512312578E-17 -0.0219882579639346",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_chassis_rear_link": {
+      "name": "camera_chassis_rear_link",
+      "mass_kg": 0.05,
+      "inertia": [
+        [
+          4.54462844907529e-06,
+          2.03954337044852e-08,
+          1.67430008011039e-07
+        ],
+        [
+          2.03954337044852e-08,
+          4.61003260927045e-06,
+          -2.48039158058937e-13
+        ],
+        [
+          1.67430008011039e-07,
+          -2.48039158058937e-13,
+          3.41171862304049e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.3874856127233925e-06,
+        4.560611415688292e-06,
+        4.618282652974544e-06
+      ],
+      "origin": {
+        "xyz": "0.000323277835184702 -4.78919875979145E-10 -0.0219882579639346",
+        "rpy": "0 0 0"
+      }
+    },
+    "lidar_chassis_left_link": {
+      "name": "lidar_chassis_left_link",
+      "mass_kg": 0.265,
+      "inertia": [
+        [
+          5.9772001346984e-06,
+          9.00342621801529e-11,
+          -2.25057605271765e-14
+        ],
+        [
+          9.00342621801529e-11,
+          5.97583972637199e-06,
+          -3.78330752163267e-12
+        ],
+        [
+          -2.25057605271765e-14,
+          -3.78330752163267e-12,
+          8.48663964320159e-06
+        ]
+      ],
+      "principal_inertia": [
+        5.975833793610234e-06,
+        5.977206067454452e-06,
+        8.48663964320729e-06
+      ],
+      "origin": {
+        "xyz": "3.92075440169837E-09 -2.05762740179694E-09 0.00386837940826326",
+        "rpy": "0 0 0"
+      }
+    },
+    "imu_chassis_link": {
+      "name": "imu_chassis_link",
+      "mass_kg": 0.00069659,
+      "inertia": [
+        [
+          1.1719e-08,
+          -5.088e-15,
+          3.1796e-15
+        ],
+        [
+          -5.088e-15,
+          1.5994e-08,
+          -1.8097e-14
+        ],
+        [
+          3.1796e-15,
+          -1.8097e-14,
+          2.6571e-08
+        ]
+      ],
+      "principal_inertia": [
+        1.1718999999993264e-08,
+        1.5993999999975096e-08,
+        2.6571000000031645e-08
+      ],
+      "origin": {
+        "xyz": "-1.8922E-09 3.7565E-09 -0.0015967",
+        "rpy": "0 0 0"
+      }
+    },
+    "torso_link1": {
+      "name": "torso_link1",
+      "mass_kg": 5.72,
+      "inertia": [
+        [
+          0.10931,
+          7.7894e-06,
+          -0.00017473
+        ],
+        [
+          7.7894e-06,
+          0.10736,
+          0.00013778
+        ],
+        [
+          -0.00017473,
+          0.00013778,
+          0.0081222
+        ]
+      ],
+      "principal_inertia": [
+        0.008121706951885778,
+        0.10736016208583221,
+        0.10931033096228202
+      ],
+      "origin": {
+        "xyz": "0.00065636 0.0032244 0.23142",
+        "rpy": "0 0 0"
+      }
+    },
+    "torso_link2": {
+      "name": "torso_link2",
+      "mass_kg": 3.5,
+      "inertia": [
+        [
+          0.026081,
+          -3.3436e-07,
+          0.00024541
+        ],
+        [
+          -3.3436e-07,
+          0.027574,
+          4.2283e-07
+        ],
+        [
+          0.00024541,
+          4.2283e-07,
+          0.0018515
+        ]
+      ],
+      "principal_inertia": [
+        0.0018490145974126076,
+        0.02608348532243753,
+        0.02757400008014986
+      ],
+      "origin": {
+        "xyz": "0.0052517 0.014411 0.15711",
+        "rpy": "0 0 0"
+      }
+    },
+    "torso_link3": {
+      "name": "torso_link3",
+      "mass_kg": 3.4,
+      "inertia": [
+        [
+          0.0016099,
+          3.5899e-07,
+          2.5497e-07
+        ],
+        [
+          3.5899e-07,
+          0.0023011,
+          1.367e-05
+        ],
+        [
+          2.5497e-07,
+          1.367e-05,
+          0.0017027
+        ]
+      ],
+      "principal_inertia": [
+        0.001609899149557511,
+        0.0017023885399653786,
+        0.0023014123104771107
+      ],
+      "origin": {
+        "xyz": "-9.8337E-07 -0.0055146 0.020182",
+        "rpy": "0 0 0"
+      }
+    },
+    "torso_link4": {
+      "name": "torso_link4",
+      "mass_kg": 5.0,
+      "inertia": [
+        [
+          0.026836,
+          1.3048e-05,
+          -0.00014074
+        ],
+        [
+          1.3048e-05,
+          0.013023,
+          4.6641e-07
+        ],
+        [
+          -0.00014074,
+          4.6641e-07,
+          0.021541
+        ]
+      ],
+      "principal_inertia": [
+        0.013022987632463628,
+        0.021537261876730423,
+        0.026839750490805957
+      ],
+      "origin": {
+        "xyz": "0.0049601 -1.2497E-05 0.21237",
+        "rpy": "0 0 0"
+      }
+    },
+    "imu_torso_link": {
+      "name": "imu_torso_link",
+      "mass_kg": 0.00069659,
+      "inertia": [
+        [
+          2.6571e-08,
+          3.1796e-15,
+          2.4286e-15
+        ],
+        [
+          3.1796e-15,
+          1.1719e-08,
+          5.6795e-15
+        ],
+        [
+          2.4286e-15,
+          5.6795e-15,
+          1.5994e-08
+        ]
+      ],
+      "principal_inertia": [
+        1.1718999999991773e-08,
+        1.599400000000699e-08,
+        2.6571000000001238e-08
+      ],
+      "origin": {
+        "xyz": "0.0015967 1.8922E-09 1.3911E-09",
+        "rpy": "0 0 0"
+      }
+    },
+    "head_link": {
+      "name": "head_link",
+      "mass_kg": 3.3054,
+      "inertia": [
+        [
+          0.012187,
+          4.2003e-08,
+          0.0001377
+        ],
+        [
+          4.2003e-08,
+          0.010358,
+          9.4374e-08
+        ],
+        [
+          0.0001377,
+          9.4374e-08,
+          0.014614
+        ]
+      ],
+      "principal_inertia": [
+        0.010357999997075833,
+        0.012179212344202764,
+        0.01462178765872139
+      ],
+      "origin": {
+        "xyz": "-0.012763 1.3354E-06 0.056558",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_head_left_link": {
+      "name": "camera_head_left_link",
+      "mass_kg": 0.05,
+      "inertia": [
+        [
+          4.5446e-06,
+          2.0395e-08,
+          1.6743e-07
+        ],
+        [
+          2.0395e-08,
+          4.61e-06,
+          -2.5102e-13
+        ],
+        [
+          1.6743e-07,
+          -2.5102e-13,
+          3.4117e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.3874667905418294e-06,
+        4.560582845866671e-06,
+        4.618250363591499e-06
+      ],
+      "origin": {
+        "xyz": "0.00032328 -4.8468E-10 -0.021988",
+        "rpy": "0 0 0"
+      }
+    },
+    "camera_head_right_link": {
+      "name": "camera_head_right_link",
+      "mass_kg": 0.05,
+      "inertia": [
+        [
+          4.5446e-06,
+          2.0395e-08,
+          1.6743e-07
+        ],
+        [
+          2.0395e-08,
+          4.61e-06,
+          -2.5102e-13
+        ],
+        [
+          1.6743e-07,
+          -2.5102e-13,
+          3.4117e-06
+        ]
+      ],
+      "principal_inertia": [
+        3.3874667905418294e-06,
+        4.560582845866671e-06,
+        4.618250363591499e-06
+      ],
+      "origin": {
+        "xyz": "0.00032328 -4.8468E-10 -0.021988",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_base_link": {
+      "name": "left_arm_base_link",
+      "mass_kg": 1.48,
+      "inertia": [
+        [
+          0.0010298,
+          5.2194e-06,
+          -1.2182e-07
+        ],
+        [
+          5.2194e-06,
+          0.0014076,
+          -3.9334e-09
+        ],
+        [
+          -1.2182e-07,
+          -3.9334e-09,
+          0.0010201
+        ]
+      ],
+      "principal_inertia": [
+        0.001020098460468702,
+        0.0010297294459113383,
+        0.0014076720936199592
+      ],
+      "origin": {
+        "xyz": "0.00026981 0.034587 1.3734E-08",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link1": {
+      "name": "left_arm_link1",
+      "mass_kg": 1.135,
+      "inertia": [
+        [
+          0.00061603,
+          -1.1635e-06,
+          -6.9725e-07
+        ],
+        [
+          -1.1635e-06,
+          0.00030259,
+          -6.2894e-07
+        ],
+        [
+          -6.9725e-07,
+          -6.2894e-07,
+          0.00047136
+        ]
+      ],
+      "principal_inertia": [
+        0.0003025833180680899,
+        0.00047135902524029496,
+        0.0006160376566916153
+      ],
+      "origin": {
+        "xyz": "0.00042258 0.074131 7.9156E-05",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link2": {
+      "name": "left_arm_link2",
+      "mass_kg": 0.92,
+      "inertia": [
+        [
+          0.00037378,
+          -7.5909e-07,
+          2.9042e-06
+        ],
+        [
+          -7.5909e-07,
+          0.00033872,
+          1.2166e-05
+        ],
+        [
+          2.9042e-06,
+          1.2166e-05,
+          0.00032361
+        ]
+      ],
+      "principal_inertia": [
+        0.00031669595744625106,
+        0.00034546638526623813,
+        0.00037394765728751106
+      ],
+      "origin": {
+        "xyz": "-0.026826 -0.0040392 -0.031835",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link3": {
+      "name": "left_arm_link3",
+      "mass_kg": 1.245,
+      "inertia": [
+        [
+          0.00072339,
+          -3.3477e-06,
+          -0.00012824
+        ],
+        [
+          -3.3477e-06,
+          0.00073856,
+          -8.3574e-06
+        ],
+        [
+          -0.00012824,
+          -8.3574e-06,
+          0.00037352
+        ]
+      ],
+      "principal_inertia": [
+        0.0003313518483421357,
+        0.0007387454871501517,
+        0.0007653726645077119
+      ],
+      "origin": {
+        "xyz": "0.0053849 -0.00086892 -0.1126",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link4": {
+      "name": "left_arm_link4",
+      "mass_kg": 0.827,
+      "inertia": [
+        [
+          0.00013884,
+          7.8394e-08,
+          3.5926e-06
+        ],
+        [
+          7.8394e-08,
+          0.00019751,
+          1.4227e-06
+        ],
+        [
+          3.5926e-06,
+          1.4227e-06,
+          0.00010229
+        ]
+      ],
+      "principal_inertia": [
+        0.00010191946939650413,
+        0.00013918898075406617,
+        0.0001975315498494297
+      ],
+      "origin": {
+        "xyz": "-0.0011018 -0.036243 -0.042164",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link5": {
+      "name": "left_arm_link5",
+      "mass_kg": 0.939,
+      "inertia": [
+        [
+          0.00070496,
+          1.4329e-08,
+          -2.9036e-09
+        ],
+        [
+          1.4329e-08,
+          0.00067006,
+          -5.1951e-05
+        ],
+        [
+          -2.9036e-09,
+          -5.1951e-05,
+          0.00032998
+        ]
+      ],
+      "principal_inertia": [
+        0.00032222093363144506,
+        0.0006778190585124777,
+        0.0007049600078560775
+      ],
+      "origin": {
+        "xyz": "3.7881E-07 -0.0028035 -0.062981",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link6": {
+      "name": "left_arm_link6",
+      "mass_kg": 0.527,
+      "inertia": [
+        [
+          8.5442e-05,
+          -1.5351e-07,
+          8.3797e-07
+        ],
+        [
+          -1.5351e-07,
+          8.1186e-05,
+          -2.1972e-08
+        ],
+        [
+          8.3797e-07,
+          -2.1972e-08,
+          8.2736e-05
+        ]
+      ],
+      "principal_inertia": [
+        8.118042178094892e-05,
+        8.249785250398477e-05,
+        8.56857257150663e-05
+      ],
+      "origin": {
+        "xyz": "0.0017919 0.027487 0.00025471",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_arm_link7": {
+      "name": "left_arm_link7",
+      "mass_kg": 0.185,
+      "inertia": [
+        [
+          4.2564e-05,
+          -2.1577e-09,
+          -6.9368e-06
+        ],
+        [
+          -2.1577e-09,
+          4.5515e-05,
+          -1.9389e-09
+        ],
+        [
+          -6.9368e-06,
+          -1.9389e-09,
+          4.7946e-05
+        ]
+      ],
+      "principal_inertia": [
+        3.7814523454680576e-05,
+        4.551500105375281e-05,
+        5.269547549156664e-05
+      ],
+      "origin": {
+        "xyz": "-0.022945 8.4007E-07 -0.056525",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_gripper_link": {
+      "name": "left_gripper_link",
+      "mass_kg": 0.24625,
+      "inertia": [
+        [
+          0.00016511,
+          9.5318e-07,
+          5.0942e-10
+        ],
+        [
+          9.5318e-07,
+          9.8651e-05,
+          -1.8604e-10
+        ],
+        [
+          5.0942e-10,
+          -1.8604e-10,
+          0.00017588
+        ]
+      ],
+      "principal_inertia": [
+        9.863733194407354e-05,
+        0.0001651236680315734,
+        0.00017588000002435305
+      ],
+      "origin": {
+        "xyz": "-2.2589E-07 -5.2175E-08 0.031107",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_realsense_link": {
+      "name": "left_realsense_link",
+      "mass_kg": 0.175,
+      "inertia": [
+        [
+          2.3234e-05,
+          -2.801e-06,
+          -1.4377e-06
+        ],
+        [
+          -2.801e-06,
+          7.0119e-06,
+          -1.2674e-06
+        ],
+        [
+          -1.4377e-06,
+          -1.2674e-06,
+          2.5513e-05
+        ]
+      ],
+      "principal_inertia": [
+        6.4253906279432605e-06,
+        2.312512916293044e-05,
+        2.62083802091263e-05
+      ],
+      "origin": {
+        "xyz": "0.0058264 -0.02222 -0.017353",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_gripper_finger_link1": {
+      "name": "left_gripper_finger_link1",
+      "mass_kg": 0.020196,
+      "inertia": [
+        [
+          6.4827e-06,
+          7.3969e-08,
+          -4.4977e-08
+        ],
+        [
+          7.3969e-08,
+          5.7129e-06,
+          -3.9973e-07
+        ],
+        [
+          -4.4977e-08,
+          -3.9973e-07,
+          2.4057e-06
+        ]
+      ],
+      "principal_inertia": [
+        2.3577591568875836e-06,
+        5.7520403900387496e-06,
+        6.491500453073663e-06
+      ],
+      "origin": {
+        "xyz": "0.0056571 -0.015027 0.01959",
+        "rpy": "0 0 0"
+      }
+    },
+    "left_gripper_finger_link2": {
+      "name": "left_gripper_finger_link2",
+      "mass_kg": 0.020196,
+      "inertia": [
+        [
+          6.4827e-06,
+          7.3965e-08,
+          4.5014e-08
+        ],
+        [
+          7.3965e-08,
+          5.7129e-06,
+          3.9974e-07
+        ],
+        [
+          4.5014e-08,
+          3.9974e-07,
+          2.4057e-06
+        ]
+      ],
+      "principal_inertia": [
+        2.3577561628119324e-06,
+        5.752042613431867e-06,
+        6.4915012237562e-06
+      ],
+      "origin": {
+        "xyz": "-0.0056573 0.015027 0.01959",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_base_link": {
+      "name": "right_arm_base_link",
+      "mass_kg": 1.48,
+      "inertia": [
+        [
+          0.0010298,
+          5.2194e-06,
+          1.2188e-07
+        ],
+        [
+          5.2194e-06,
+          0.0014076,
+          5.1015e-09
+        ],
+        [
+          1.2188e-07,
+          5.1015e-09,
+          0.0010201
+        ]
+      ],
+      "principal_inertia": [
+        0.0010200984593221323,
+        0.0010297294470205135,
+        0.0014076720936573527
+      ],
+      "origin": {
+        "xyz": "-0.00026981 -0.034587 -3.669E-08",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link1": {
+      "name": "right_arm_link1",
+      "mass_kg": 1.135,
+      "inertia": [
+        [
+          0.00061603,
+          -1.1635e-06,
+          6.9785e-07
+        ],
+        [
+          -1.1635e-06,
+          0.00030259,
+          6.2359e-07
+        ],
+        [
+          6.9785e-07,
+          6.2359e-07,
+          0.00047135
+        ]
+      ],
+      "principal_inertia": [
+        0.00030258335778078166,
+        0.00047134897980209716,
+        0.0006160376624171211
+      ],
+      "origin": {
+        "xyz": "-0.00042261 -0.074132 7.8365E-05",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link2": {
+      "name": "right_arm_link2",
+      "mass_kg": 0.92,
+      "inertia": [
+        [
+          0.00038179,
+          2.6532e-07,
+          -3.6367e-06
+        ],
+        [
+          2.6532e-07,
+          0.00034188,
+          -8.4407e-06
+        ],
+        [
+          -3.6367e-06,
+          -8.4407e-06,
+          0.00032895
+        ]
+      ],
+      "principal_inertia": [
+        0.0003246095989662412,
+        0.0003459530531588267,
+        0.00038205734787493225
+      ],
+      "origin": {
+        "xyz": "-0.022361 0.0049527 -0.032732",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link3": {
+      "name": "right_arm_link3",
+      "mass_kg": 1.245,
+      "inertia": [
+        [
+          0.00072336,
+          -3.3628e-06,
+          -0.00012821
+        ],
+        [
+          -3.3628e-06,
+          0.00073854,
+          -8.3749e-06
+        ],
+        [
+          -0.00012821,
+          -8.3749e-06,
+          0.00037348
+        ]
+      ],
+      "principal_inertia": [
+        0.00033132961138106074,
+        0.0007387259947586686,
+        0.0007653243938602712
+      ],
+      "origin": {
+        "xyz": "0.0053839 -0.00087109 -0.11261",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link4": {
+      "name": "right_arm_link4",
+      "mass_kg": 0.827,
+      "inertia": [
+        [
+          0.00016157,
+          7.8184e-08,
+          3.5925e-06
+        ],
+        [
+          7.8184e-08,
+          0.00022024,
+          1.4211e-06
+        ],
+        [
+          3.5925e-06,
+          1.4211e-06,
+          0.00012683
+        ]
+      ],
+      "principal_inertia": [
+        0.00012644131744487,
+        0.00016193676630755577,
+        0.00022026191624757415
+      ],
+      "origin": {
+        "xyz": "-0.00058877 -0.035687 -0.057422",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link5": {
+      "name": "right_arm_link5",
+      "mass_kg": 0.63,
+      "inertia": [
+        [
+          0.00069134,
+          1.4191e-08,
+          3.837e-09
+        ],
+        [
+          1.4191e-08,
+          0.00065644,
+          5.1952e-05
+        ],
+        [
+          3.837e-09,
+          5.1952e-05,
+          0.00031157
+        ]
+      ],
+      "principal_inertia": [
+        0.00030391380218130364,
+        0.0006640961899881393,
+        0.0006913400078305574
+      ],
+      "origin": {
+        "xyz": "-2.2815E-07 0.0031762 -0.07334",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link6": {
+      "name": "right_arm_link6",
+      "mass_kg": 0.527,
+      "inertia": [
+        [
+          8.5442e-05,
+          1.5357e-07,
+          8.3693e-07
+        ],
+        [
+          1.5357e-07,
+          8.1185e-05,
+          2.2221e-08
+        ],
+        [
+          8.3693e-07,
+          2.2221e-08,
+          8.2736e-05
+        ]
+      ],
+      "principal_inertia": [
+        8.117942207303627e-05,
+        8.249839111366969e-05,
+        8.568518681329413e-05
+      ],
+      "origin": {
+        "xyz": "0.0017914 -0.027486 0.00025485",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_arm_link7": {
+      "name": "right_arm_link7",
+      "mass_kg": 0.185,
+      "inertia": [
+        [
+          7.8535e-05,
+          -9.5509e-10,
+          -2.8712e-05
+        ],
+        [
+          -9.5509e-10,
+          9.467e-05,
+          9.104e-11
+        ],
+        [
+          -2.8712e-05,
+          9.104e-11,
+          6.1128e-05
+        ]
+      ],
+      "principal_inertia": [
+        3.982933580274459e-05,
+        9.466999987384744e-05,
+        9.983366432340802e-05
+      ],
+      "origin": {
+        "xyz": "-0.022945 2.2938E-07 -0.056523",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_gripper_link": {
+      "name": "right_gripper_link",
+      "mass_kg": 0.24625,
+      "inertia": [
+        [
+          0.00016511,
+          9.5318e-07,
+          5.0942e-10
+        ],
+        [
+          9.5318e-07,
+          9.8651e-05,
+          -1.8604e-10
+        ],
+        [
+          5.0942e-10,
+          -1.8604e-10,
+          0.00017588
+        ]
+      ],
+      "principal_inertia": [
+        9.863733194407354e-05,
+        0.0001651236680315734,
+        0.00017588000002435305
+      ],
+      "origin": {
+        "xyz": "-2.2589E-07 -5.2175E-08 0.031107",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_realsense_link": {
+      "name": "right_realsense_link",
+      "mass_kg": 0.175,
+      "inertia": [
+        [
+          2.3234e-05,
+          -2.801e-06,
+          -1.4377e-06
+        ],
+        [
+          -2.801e-06,
+          7.0119e-06,
+          -1.2674e-06
+        ],
+        [
+          -1.4377e-06,
+          -1.2674e-06,
+          2.5513e-05
+        ]
+      ],
+      "principal_inertia": [
+        6.4253906279432605e-06,
+        2.312512916293044e-05,
+        2.62083802091263e-05
+      ],
+      "origin": {
+        "xyz": "0.0058264 -0.02222 -0.017353",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_gripper_finger_link1": {
+      "name": "right_gripper_finger_link1",
+      "mass_kg": 0.027,
+      "inertia": [
+        [
+          6.4827e-06,
+          7.3969e-08,
+          -4.4977e-08
+        ],
+        [
+          7.3969e-08,
+          5.7129e-06,
+          -3.9973e-07
+        ],
+        [
+          -4.4977e-08,
+          -3.9973e-07,
+          2.4057e-06
+        ]
+      ],
+      "principal_inertia": [
+        2.3577591568875836e-06,
+        5.7520403900387496e-06,
+        6.491500453073663e-06
+      ],
+      "origin": {
+        "xyz": "0.0056571 -0.015027 0.01959",
+        "rpy": "0 0 0"
+      }
+    },
+    "right_gripper_finger_link2": {
+      "name": "right_gripper_finger_link2",
+      "mass_kg": 0.027,
+      "inertia": [
+        [
+          6.4827e-06,
+          7.3965e-08,
+          4.5014e-08
+        ],
+        [
+          7.3965e-08,
+          5.7129e-06,
+          3.9974e-07
+        ],
+        [
+          4.5014e-08,
+          3.9974e-07,
+          2.4057e-06
+        ]
+      ],
+      "principal_inertia": [
+        2.3577561628119324e-06,
+        5.752042613431867e-06,
+        6.4915012237562e-06
+      ],
+      "origin": {
+        "xyz": "-0.0056573 0.015027 0.01959",
+        "rpy": "0 0 0"
+      }
+    }
+  }
+}

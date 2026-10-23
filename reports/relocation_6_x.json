@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "scene": "/tmp/r1pro-portability-m_c893f6/r1pro_2026_usd_isaacsim_6_x/demo.usda",
+  "dofs": 28,
+  "physics_seconds": 3,
+  "root_position": [
+    -0.00011863559484481812,
+    4.977504431735724e-06,
+    0.00034311413764953613
+  ]
+}

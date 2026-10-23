@@ -1,0 +1,293 @@
+{
+  "mode": "fixed",
+  "status": "pass",
+  "checks": [
+    {
+      "joint": "steer_motor_joint1",
+      "target": 0.08,
+      "actual": 0.08000116050243378,
+      "error": 1.1605024337751901e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "steer_motor_joint2",
+      "target": 0.08,
+      "actual": 0.08000100404024124,
+      "error": 1.0040402412397897e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "steer_motor_joint3",
+      "target": 0.08,
+      "actual": 0.07999880611896515,
+      "error": 1.1938810348527396e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "torso_joint1",
+      "target": 0.08,
+      "actual": 0.08031891286373138,
+      "error": 0.0003189128637313826,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "wheel_motor_joint1",
+      "target": 0.5,
+      "actual": 0.5000011324882507,
+      "error": 1.1324882507324219e-06,
+      "tolerance": 0.15,
+      "pass_": true
+    },
+    {
+      "joint": "wheel_motor_joint2",
+      "target": 0.5,
+      "actual": 0.5000011324882507,
+      "error": 1.1324882507324219e-06,
+      "tolerance": 0.15,
+      "pass_": true
+    },
+    {
+      "joint": "wheel_motor_joint3",
+      "target": 0.5,
+      "actual": 0.5000014901161194,
+      "error": 1.4901161193847656e-06,
+      "tolerance": 0.15,
+      "pass_": true
+    },
+    {
+      "joint": "torso_joint2",
+      "target": 0.08,
+      "actual": 0.08027702569961548,
+      "error": 0.00027702569961547685,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "torso_joint3",
+      "target": 0.08,
+      "actual": 0.07997282594442368,
+      "error": 2.7174055576326128e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "torso_joint4",
+      "target": 0.08,
+      "actual": 0.07999931275844574,
+      "error": 6.872415542619192e-07,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint1",
+      "target": 0.08,
+      "actual": 0.07995377480983734,
+      "error": 4.622519016266036e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint1",
+      "target": 0.08,
+      "actual": 0.0799541249871254,
+      "error": 4.587501287460494e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint2",
+      "target": 0.08,
+      "actual": 0.07999174296855927,
+      "error": 8.257031440736529e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint2",
+      "target": 0.07852335375,
+      "actual": 0.07851497083902359,
+      "error": 8.382910976406643e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint3",
+      "target": 0.08,
+      "actual": 0.08000220358371735,
+      "error": 2.203583717344526e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint3",
+      "target": 0.08,
+      "actual": 0.07999753952026367,
+      "error": 2.4604797363297903e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint4",
+      "target": 0.08,
+      "actual": 0.08001529425382614,
+      "error": 1.5294253826139692e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint4",
+      "target": 0.08,
+      "actual": 0.08001735806465149,
+      "error": 1.7358064651487592e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint5",
+      "target": 0.08,
+      "actual": 0.0800153836607933,
+      "error": 1.5383660793302778e-05,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint5",
+      "target": 0.08,
+      "actual": 0.07999513298273087,
+      "error": 4.867017269136187e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint6",
+      "target": 0.08,
+      "actual": 0.08000180125236511,
+      "error": 1.8012523651106394e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint6",
+      "target": 0.08,
+      "actual": 0.08000125735998154,
+      "error": 1.2573599815352e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_arm_joint7",
+      "target": 0.08,
+      "actual": 0.07999549806118011,
+      "error": 4.501938819886919e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "right_arm_joint7",
+      "target": 0.08,
+      "actual": 0.07999533414840698,
+      "error": 4.6658515930192435e-06,
+      "tolerance": 0.04,
+      "pass_": true
+    },
+    {
+      "joint": "left_gripper_finger_joint1",
+      "target": 0.02,
+      "actual": 0.020000047981739044,
+      "error": 4.798173904377312e-08,
+      "tolerance": 0.002,
+      "pass_": true
+    },
+    {
+      "joint": "left_gripper_finger_joint2",
+      "target": -0.02,
+      "actual": -0.019999990239739418,
+      "error": 9.760260582386548e-09,
+      "tolerance": 0.002,
+      "pass_": true
+    },
+    {
+      "joint": "right_gripper_finger_joint1",
+      "target": 0.02,
+      "actual": 0.020000014454126358,
+      "error": 1.4454126357615893e-08,
+      "tolerance": 0.002,
+      "pass_": true
+    },
+    {
+      "joint": "right_gripper_finger_joint2",
+      "target": -0.02,
+      "actual": -0.019999993965029716,
+      "error": 6.0349702839246344e-09,
+      "tolerance": 0.002,
+      "pass_": true
+    }
+  ],
+  "config": {
+    "physics_dt": 0.004166666666666667,
+    "settle_steps": 720,
+    "joint_steps": 480,
+    "angular_amplitude_rad": 0.08,
+    "linear_amplitude_m": 0.02,
+    "angular_tolerance_rad": 0.04,
+    "linear_tolerance_m": 0.002,
+    "wheel_test_velocity_rad_s": 0.5,
+    "wheel_velocity_tolerance_rad_s": 0.15,
+    "root_height_tolerance_m": 0.06,
+    "root_tilt_limit_rad": 0.2,
+    "joint_limit_tolerance": 0.002,
+    "rationale": "240 Hz resolves finger and wheel contacts; 3 s settle and 2 s per joint. Small axis tests avoid large-pose torque saturation. Tracking tolerances are simulation smoke-test limits, not hardware accuracy claims."
+  },
+  "asset": "/home/xq/work/code/projects/r1pro/outputs/isaacsim_5_1/r1pro_2026.usd",
+  "version": [
+    "5.1.0",
+    "rc.19",
+    "5",
+    "1",
+    "0",
+    "rc",
+    "19",
+    "release.26219.9c81211b.gl"
+  ],
+  "dof_names": [
+    "steer_motor_joint1",
+    "steer_motor_joint2",
+    "steer_motor_joint3",
+    "torso_joint1",
+    "wheel_motor_joint1",
+    "wheel_motor_joint2",
+    "wheel_motor_joint3",
+    "torso_joint2",
+    "torso_joint3",
+    "torso_joint4",
+    "left_arm_joint1",
+    "right_arm_joint1",
+    "left_arm_joint2",
+    "right_arm_joint2",
+    "left_arm_joint3",
+    "right_arm_joint3",
+    "left_arm_joint4",
+    "right_arm_joint4",
+    "left_arm_joint5",
+    "right_arm_joint5",
+    "left_arm_joint6",
+    "right_arm_joint6",
+    "left_arm_joint7",
+    "right_arm_joint7",
+    "left_gripper_finger_joint1",
+    "left_gripper_finger_joint2",
+    "right_gripper_finger_joint1",
+    "right_gripper_finger_joint2"
+  ],
+  "settled_root_position": [
+    -1.1175870895385742e-08,
+    -6.693881005048752e-10,
+    0.15000006556510925
+  ],
+  "physics_steps": 14882,
+  "physics_seconds": 62.00833656731993
+}

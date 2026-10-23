@@ -1,0 +1,100 @@
+{
+  "status": "pass",
+  "scope": "Isaac Sim 5.1 and 6.2.0 / PhysX only",
+  "versions": {
+    "5_1": {
+      "runtime_version": [
+        "5.1.0",
+        "rc.19",
+        "5",
+        "1",
+        "0",
+        "rc",
+        "19",
+        "release.26219.9c81211b.gl"
+      ],
+      "dofs": 28,
+      "fixed_joint_tests": 28,
+      "fixed_physics_seconds": 62.00833656731993,
+      "mobile_physics_seconds": 15.041667451150715,
+      "rolling": {
+        "name": "rolling",
+        "pass_": true,
+        "distance_m": 0.09170229732990265,
+        "height": -8.851289749145508e-05,
+        "tilt_rad": 7.228031691171304e-05,
+        "wheel_velocities": {
+          "wheel_motor_joint1": 0.2085329294204712,
+          "wheel_motor_joint2": 0.26582300662994385,
+          "wheel_motor_joint3": 0.23832617700099945
+        },
+        "mean_wheel_velocities": {
+          "wheel_motor_joint1": 0.4342600107192993,
+          "wheel_motor_joint2": 0.43793002764383954,
+          "wheel_motor_joint3": 0.4348612229029338
+        }
+      },
+      "static": {
+        "status": "pass",
+        "roots": [
+          "/r1pro_2026/base_link"
+        ],
+        "moving_joints": 28,
+        "fixed_joints": 17,
+        "collision_shapes": 46,
+        "rigid_bodies": 46,
+        "max_frame_matrix_error": 3.1442048176177906e-07,
+        "layers": 8,
+        "assets": 1
+      },
+      "relocation": "pass"
+    },
+    "6_x": {
+      "runtime_version": [
+        "6.2.0",
+        "rc.14",
+        "6",
+        "2",
+        "0",
+        "rc",
+        "14",
+        "release.52805.02189a84.gl"
+      ],
+      "dofs": 28,
+      "fixed_joint_tests": 28,
+      "fixed_physics_seconds": 62.00833656731993,
+      "mobile_physics_seconds": 15.025000783614814,
+      "rolling": {
+        "name": "rolling",
+        "pass_": true,
+        "distance_m": 0.08550211787223816,
+        "height": -4.7594308853149414e-05,
+        "tilt_rad": 0.0,
+        "wheel_velocities": {
+          "wheel_motor_joint1": 0.6355183720588684,
+          "wheel_motor_joint2": 0.5126292109489441,
+          "wheel_motor_joint3": 0.6014084219932556
+        },
+        "mean_wheel_velocities": {
+          "wheel_motor_joint1": 0.4070533812046051,
+          "wheel_motor_joint2": 0.41680511832237244,
+          "wheel_motor_joint3": 0.40566012263298035
+        }
+      },
+      "static": {
+        "status": "pass",
+        "roots": [
+          "/r1pro_2026/Geometry/base_link"
+        ],
+        "moving_joints": 28,
+        "fixed_joints": 17,
+        "collision_shapes": 46,
+        "rigid_bodies": 46,
+        "max_frame_matrix_error": 3.2896453278086213e-07,
+        "layers": 13,
+        "assets": 1
+      },
+      "relocation": "pass"
+    }
+  }
+}

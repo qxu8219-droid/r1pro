@@ -1,0 +1,47 @@
+{
+  "os": "Ubuntu 22.04 native Linux (dual boot; Windows untouched)",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "vram_mib": 12227,
+  "driver": "580.178.04",
+  "isaacsim_5_1": {
+    "root": "/home/xq/isaacsim",
+    "version_file": "5.1.0-rc.19+release.26219.9c81211b.gl",
+    "runtime_version": [
+      "5.1.0",
+      "rc.19",
+      "5",
+      "1",
+      "0",
+      "rc",
+      "19",
+      "release.26219.9c81211b.gl"
+    ],
+    "smoke": {
+      "status": "pass",
+      "steps": 360,
+      "physics_seconds": 3.0,
+      "usd_version": [
+        0,
+        24,
+        5
+      ]
+    }
+  },
+  "isaacsim_6_x": {
+    "python": "/home/xq/work/code/projects/r1pro/.venvs/isaacsim62/bin/python",
+    "pip_version": "6.2.0.0",
+    "runtime_version": [
+      "6.2.0",
+      "rc.14",
+      "6",
+      "2",
+      "0",
+      "rc",
+      "14",
+      "release.52805.02189a84.gl"
+    ],
+    "compatibility_checker": "PASSED",
+    "eula": "explicitly accepted by user in this conversation"
+  },
+  "backend": "PhysX in both versions; Newton not validated"
+}

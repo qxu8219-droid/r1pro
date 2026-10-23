@@ -1,0 +1,13 @@
+{
+  "merge_fixed_joints": false,
+  "merge_mesh": false,
+  "collision_from_visuals": false,
+  "collision_type": "Convex Hull",
+  "allow_self_collision": false,
+  "robot_type": "Mobile Manipulators",
+  "fix_base": false,
+  "joint_drive_type": "force",
+  "joint_target_type": "position",
+  "run_asset_transformer": true,
+  "run_multi_physics_conversion": true
+}

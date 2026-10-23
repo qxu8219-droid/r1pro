@@ -1,0 +1,7 @@
+Isaac Sim Python install plan:
+# Installation-only boundary: do not import or launch the Isaac Sim main application.
+python3.12 -m venv .venvs/isaacsim62
+.venvs/isaacsim62/bin/python -m pip --isolated install --upgrade pip
+.venvs/isaacsim62/bin/python -m pip --isolated install --report .venvs/isaacsim62/.isaacsim-pip-resolution.json 'isaacsim[all,extscache]==6.2.0.0' --extra-index-url https://pypi.nvidia.com
+
+Dry-run only. Re-run with --execute after confirming the target environment.

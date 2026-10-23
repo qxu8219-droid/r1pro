@@ -1,0 +1,14 @@
+[
+  {
+    "version": "5_1",
+    "static_exit": 0,
+    "runtime_exit": 0,
+    "relocated": "/tmp/r1pro-portability-m_c893f6/r1pro_2026_usd_isaacsim_5_1"
+  },
+  {
+    "version": "6_x",
+    "static_exit": 0,
+    "runtime_exit": 0,
+    "relocated": "/tmp/r1pro-portability-m_c893f6/r1pro_2026_usd_isaacsim_6_x"
+  }
+]

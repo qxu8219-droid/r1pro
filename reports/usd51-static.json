@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "roots": [
+    "/r1pro_2026/base_link"
+  ],
+  "moving_joints": 28,
+  "rigid_bodies": 46,
+  "max_frame_matrix_error": 3.1442048176177906e-07,
+  "layers": 8,
+  "assets": 1
+}

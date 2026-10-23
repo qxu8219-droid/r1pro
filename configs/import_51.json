@@ -1,0 +1,14 @@
+{
+  "description": "Source-faithful import; drives authored separately in physics override layer.",
+  "merge_fixed_joints": false,
+  "convex_decomp": false,
+  "import_inertia_tensor": true,
+  "fix_base": false,
+  "distance_scale": 1.0,
+  "density": 0.0,
+  "collision_from_visuals": false,
+  "self_collision": false,
+  "create_physics_scene": false,
+  "make_default_prim": true,
+  "parse_mimic": false
+}

@@ -1,0 +1,15 @@
+{
+  "physics_dt": 0.004166666666666667,
+  "settle_steps": 720,
+  "joint_steps": 480,
+  "angular_amplitude_rad": 0.08,
+  "linear_amplitude_m": 0.02,
+  "angular_tolerance_rad": 0.04,
+  "linear_tolerance_m": 0.002,
+  "wheel_test_velocity_rad_s": 0.5,
+  "wheel_velocity_tolerance_rad_s": 0.15,
+  "root_height_tolerance_m": 0.06,
+  "root_tilt_limit_rad": 0.2,
+  "joint_limit_tolerance": 0.002,
+  "rationale": "240 Hz resolves finger and wheel contacts; 3 s settle and 2 s per joint. Small axis tests avoid large-pose torque saturation. Tracking tolerances are simulation smoke-test limits, not hardware accuracy claims."
+}

@@ -1,0 +1,108 @@
+{
+  "mode": "mobile",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "rest_contact",
+      "pass_": true,
+      "height": -5.631148815155029e-05,
+      "tilt_rad": 1.061607082101506e-05
+    },
+    {
+      "name": "steering",
+      "pass_": true,
+      "positions": {
+        "steer_motor_joint1": 0.11418285220861435,
+        "steer_motor_joint2": 0.10995371639728546,
+        "steer_motor_joint3": 0.10158612579107285
+      }
+    },
+    {
+      "name": "rolling",
+      "pass_": true,
+      "distance_m": 0.09184513241052628,
+      "height": -8.374452590942383e-05,
+      "tilt_rad": 6.99795051928882e-05,
+      "wheel_velocities": {
+        "wheel_motor_joint1": 0.2462473213672638,
+        "wheel_motor_joint2": 0.2532806992530823,
+        "wheel_motor_joint3": 0.2694191336631775
+      }
+    }
+  ],
+  "config": {
+    "physics_dt": 0.004166666666666667,
+    "settle_steps": 720,
+    "joint_steps": 480,
+    "angular_amplitude_rad": 0.08,
+    "linear_amplitude_m": 0.02,
+    "angular_tolerance_rad": 0.04,
+    "linear_tolerance_m": 0.002,
+    "wheel_test_velocity_rad_s": 0.5,
+    "wheel_velocity_tolerance_rad_s": 0.15,
+    "root_height_tolerance_m": 0.06,
+    "root_tilt_limit_rad": 0.2,
+    "joint_limit_tolerance": 0.002,
+    "rationale": "240 Hz resolves finger and wheel contacts; 3 s settle and 2 s per joint. Small axis tests avoid large-pose torque saturation. Tracking tolerances are simulation smoke-test limits, not hardware accuracy claims."
+  },
+  "asset": "/home/xq/work/code/projects/r1pro/outputs/isaacsim_5_1/r1pro_2026.usd",
+  "version": [
+    "5.1.0",
+    "rc.19",
+    "5",
+    "1",
+    "0",
+    "rc",
+    "19",
+    "release.26219.9c81211b.gl"
+  ],
+  "dof_names": [
+    "steer_motor_joint1",
+    "steer_motor_joint2",
+    "steer_motor_joint3",
+    "torso_joint1",
+    "wheel_motor_joint1",
+    "wheel_motor_joint2",
+    "wheel_motor_joint3",
+    "torso_joint2",
+    "torso_joint3",
+    "torso_joint4",
+    "left_arm_joint1",
+    "right_arm_joint1",
+    "left_arm_joint2",
+    "right_arm_joint2",
+    "left_arm_joint3",
+    "right_arm_joint3",
+    "left_arm_joint4",
+    "right_arm_joint4",
+    "left_arm_joint5",
+    "right_arm_joint5",
+    "left_arm_joint6",
+    "right_arm_joint6",
+    "left_arm_joint7",
+    "right_arm_joint7",
+    "left_gripper_finger_joint1",
+    "left_gripper_finger_joint2",
+    "right_gripper_finger_joint1",
+    "right_gripper_finger_joint2"
+  ],
+  "settled_root_position": [
+    -0.008719552308321,
+    -1.0143216059077531e-05,
+    -5.6296586990356445e-05
+  ],
+  "images": [
+    {
+      "file": "front.png",
+      "mean": 208.38512179904515,
+      "std": 18.979888305659216
+    },
+    {
+      "file": "back.png",
+      "mean": 206.1507687717014,
+      "std": 17.789069717564455
+    }
+  ],
+  "physics_steps": 3610,
+  "physics_seconds": 15.041667451150715
+}

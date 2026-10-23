@@ -1,0 +1,20 @@
+[
+  {
+    "version": "6_x",
+    "mode": "fixed",
+    "exit_code": 0,
+    "log": "reports/release-6_x-fixed.log"
+  },
+  {
+    "version": "6_x",
+    "mode": "mobile",
+    "exit_code": 0,
+    "log": "reports/release-6_x-mobile.log"
+  },
+  {
+    "version": "5_1",
+    "mode": "mobile",
+    "exit_code": 0,
+    "log": "reports/release-5_1-mobile.log"
+  }
+]

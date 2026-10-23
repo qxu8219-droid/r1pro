@@ -1,0 +1,58 @@
+[
+  {
+    "name": "urdf-mjcf-to-usd-conversion",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "ebb9d29e338cfc72dee5bf4e4e341b09cd205b212935578c266c212d371e562e",
+    "use": "5.1 importer adaptation; 6.2 API workflow",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "usd-articulation",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "4355828c26ac25a6ff1d6045f0f1ed2ab137112281958f55524f870ca24b0752",
+    "use": "single articulation and 28 joint structure checks",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "physics-simulation",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "731d4bf666fa0a399acb1e063c34cd247030b4d8055a1ebcc17790187760c51b",
+    "use": "240 Hz TGS, force drives, contact material and physics-state readback",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "usd-composition-architecture",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "f539f6a6a89223db8e9714132a175a00f5279bcf262ee913f151f1c9509b5a23",
+    "use": "preserved importer layers + separate physics/appearance override layers",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "isaac-sim-validator",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "98dcaae598780422250a755f2d7e7d4444900432bef239aefa4f961d9db2d9bb",
+    "use": "static checks, physics test duration and rendered image checks",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "isaac-sim-orchestrator",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "36b6b51cf4648c91d59dc5afc88073a0e9293925457ac26bb9b2958a0ff6280d",
+    "use": "capability mapping, incremental foundation/integration checks",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "isaac-sim-installation",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "bd80d7f026b54ace4c81c9c9c908131f8fb4e11b5b343e688e4efcd632e628cd",
+    "use": "preflight, explicit user EULA acknowledgement, isolated version-pinned Python install",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  },
+  {
+    "name": "isaac-sim-troubleshooting",
+    "source": "https://github.com/isaac-sim/IsaacSim",
+    "skill_sha256": "f3824249feb2f35ed455527a6ca00ee7ff186f36862af8c5ad70e86b9c57e424",
+    "use": "startup/shutdown diagnostics and bounded processes",
+    "invocation": "file-based loading; no native skill invocation API exposed"
+  }
+]

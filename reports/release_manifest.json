@@ -1,0 +1,18 @@
+[
+  {
+    "archive": "deliverables/r1pro_2026_isaacsim_5_1.zip",
+    "bytes": 13420736,
+    "sha256": "94257c9a598f2cbffd539ed140fbfc9a0ac2c0978288535f8ecfbaec09024faa",
+    "files": 49,
+    "zip_crc": "pass",
+    "internal_sha256": "pass"
+  },
+  {
+    "archive": "deliverables/r1pro_2026_isaacsim_6_x.zip",
+    "bytes": 11168542,
+    "sha256": "bff6345fff8ac255bf961e5b425d7a657baa55b6fa8e4a946d97f0b6389db50f",
+    "files": 54,
+    "zip_crc": "pass",
+    "internal_sha256": "pass"
+  }
+]

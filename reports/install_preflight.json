@@ -1,0 +1,90 @@
+{
+  "system": {
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "python": "3.10.12",
+    "memory_gb": 30.8,
+    "home_free_gb": 161.6
+  },
+  "commands": {
+    "nvidia_smi": {
+      "available": true,
+      "command": [
+        "nvidia-smi"
+      ],
+      "returncode": 0,
+      "stdout": "Thu Oct 22 15:56:46 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...    Off |   00000000:02:00.0  On |                  N/A |\n| N/A   48C    P8             10W /   65W |     929MiB /  12227MiB |     45%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            1616      G   /usr/bin/gnome-shell                    312MiB |\n|    0   N/A  N/A           12589      G   /usr/share/trae-cn/trae-cn               69MiB |\n|    0   N/A  N/A           26480    C+G   ...aacsim/kit/python/bin/python3        455MiB |\n+-----------------------------------------------------------------------------------------+",
+      "stderr": ""
+    },
+    "python3_12": {
+      "available": false,
+      "command": [
+        "python3.12",
+        "--version"
+      ],
+      "error": "python3.12 not found"
+    },
+    "python3_12_venv": {
+      "available": false,
+      "command": [
+        "python3.12",
+        "-m",
+        "venv",
+        "--help"
+      ],
+      "error": "python3.12 not found"
+    },
+    "python3_12_ensurepip": {
+      "available": false,
+      "command": [
+        "python3.12",
+        "-m",
+        "ensurepip",
+        "--version"
+      ],
+      "error": "python3.12 not found"
+    },
+    "docker": {
+      "available": false,
+      "command": [
+        "docker",
+        "--version"
+      ],
+      "error": "docker not found"
+    },
+    "nvidia_ctk": {
+      "available": false,
+      "command": [
+        "nvidia-ctk",
+        "--version"
+      ],
+      "error": "nvidia-ctk not found"
+    }
+  },
+  "gpu_summary": {
+    "available": true,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "driver_version": "580.178.04",
+        "cuda_version": "13.0",
+        "memory_total_mib": "12227",
+        "rtx_name_hint": true
+      }
+    ]
+  },
+  "environment": {
+    "DISPLAY": ":0",
+    "WAYLAND_DISPLAY": "wayland-0",
+    "OMNI_KIT_ACCEPT_EULA": null
+  }
+}
+
+Summary:
+- Python package install expects Python 3.12.
+- python3.12 venv/ensurepip missing; install the venv module before the Python package flow. On Debian/Ubuntu: sudo apt install python3.12-venv
+- GPU detected: NVIDIA GeForce RTX 5070 Ti Laptop GPU | driver 580.178.04 | CUDA 13.0 | VRAM 12227 MiB
+- Container flow needs Docker plus NVIDIA Container Toolkit; install/configure it before Docker launch.
+- Run preflight with --docker-gpu-check to verify Docker can access the GPU.
+- Keep at least 50GB free storage; more is better for caches.
+- Run the Isaac Sim Compatibility Checker for final GPU/driver pass-fail.

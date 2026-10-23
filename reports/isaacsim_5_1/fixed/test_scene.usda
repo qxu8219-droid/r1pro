@@ -1,0 +1,652 @@
+#usda 1.0
+(
+    endTimeCode = 1000000
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:dlss:frameGeneration = 0
+                string[] omni:rtx:material:db:flattener:ior_constant = ["ior_constant", "glass_ior"]
+                string[] omni:rtx:material:db:flattener:reflection_roughness_constant = ["reflection_roughness_constant", "frosting_roughness"]
+                string[] omni:rtx:material:db:flattener:transmittance_color = ["transmittance_color", "glass_color"]
+                bool omni:rtx:material:db:nonVisualMaterialCSV:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:aa:op = "dlss"
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                int omni:rtx:pt:clampSpp = 64
+                bool omni:rtx:pt:denoising:enabled = 1
+                bool omni:rtx:pt:lightcache:cached:dontResolveConflicts = 1
+                int omni:rtx:pt:limits:maxBounces = 4
+                int omni:rtx:pt:limits:maxGlossyBounces = 6
+                int omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                int omni:rtx:pt:maxVolumeBounces = 4
+                int omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                int omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:raytracing:picking:occluded:enabled = 0
+                token omni:rtx:rendermode
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                int omni:rtx:rt:iesTextureRes = 1024
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                int omni:rtx:scene:hydra:subdivision:refinementLevel = 0
+                uint omni:rtx:viewTile:limit = 4294967295
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 960)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars"
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+        }
+    }
+}
+
+def PhysicsScene "physicsScene" (
+    prepend apiSchemas = ["PhysxSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    uniform token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableCCD = 1
+    bool physxScene:enableGPUDynamics = 0
+    bool physxScene:enableStabilization = 0
+    uniform token physxScene:solverType = "TGS"
+    uint physxScene:timeStepsPerSecond = 240
+}
+
+def "World"
+{
+    def Xform "Robot" (
+        prepend references = @/home/xq/work/code/projects/r1pro/outputs/isaacsim_5_1/r1pro_2026.usd@
+    )
+    {
+        double3 xformOp:translate = (0, 0, 0.15)
+
+        def PhysicsFixedJoint "test_fixture"
+        {
+            rel physics:body1 = </World/Robot/base_link>
+            point3f physics:localPos0 = (0, 0, 0.15)
+        }
+
+        over "base_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (3.2905838e-9, -4.2145016e-12, 1.5003035e-10)
+            quatd xformOp:orient = (1, 0, 0, -0)
+            double3 xformOp:translate = (-3.3527612686157227e-8, -4.896719474345446e-9, 5.0663948064633146e-8)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        over "camera_chassis_front_left_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (4.8172835e-9, -1.6440247e-11, -5.0161977e-9)
+            quatd xformOp:orient = (0.4999981149994698, -0.49999993294368555, 0.5000018700944966, -0.5000000819552864)
+            double3 xformOp:translate = (0.2110000103712082, 0.13269996643066406, 0.2526501178741455)
+        }
+
+        over "camera_chassis_front_right_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (4.789718e-9, -1.644025e-11, -4.968788e-9)
+            quatd xformOp:orient = (0.4999981149994698, -0.49999993294368555, 0.5000018700944966, -0.5000000819552864)
+            double3 xformOp:translate = (0.210999995470047, -0.13270004093647003, 0.2526500582695007)
+        }
+
+        over "camera_chassis_left_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (4.8348543e-9, 4.9785267e-12, -5.956438e-10)
+            quatd xformOp:orient = (-0.7071055415884089, 0.7071080207825128, 1.4901161193848543e-8, 1.6065314412117964e-8)
+            double3 xformOp:translate = (-0.017532017081975937, 0.3235301077365875, 0.2526501178741455)
+        }
+
+        over "camera_chassis_rear_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (5.06256e-9, 4.055193e-11, 6.404804e-9)
+            quatd xformOp:orient = (-0.49999810009793794, 0.500000037251878, 0.5000018849957836, -0.49999997764723597)
+            double3 xformOp:translate = (-0.36106008291244507, -4.147295840084553e-8, 0.26465011239051817)
+        }
+
+        over "camera_chassis_right_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (4.772214e-9, 5.045685e-12, -4.739547e-10)
+            quatd xformOp:orient = (0.000002607702683402037, -0.0000025816260033969967, 0.7071080924826679, -0.7071054698784743)
+            double3 xformOp:translate = (-0.017532048746943474, -0.323529988527298, 0.2526500284671783)
+        }
+
+        over "imu_chassis_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (4.741014e-9, 2.4828288e-12, -9.528492e-10)
+            quatd xformOp:orient = (0.9999999999999982, 1.5347962174038785e-11, 5.960456367064011e-8, -9.712297959051631e-11)
+            double3 xformOp:translate = (0.0018376691732555628, -4.9134247781523754e-9, 0.25135005116462705)
+        }
+
+        over "lidar_chassis_left_link"
+        {
+            vector3f physics:angularVelocity = (-1.0234915e-8, 0.0000012365913, -5.950936e-9)
+            vector3f physics:velocity = (5.8207186e-9, -4.933239e-12, -4.350858e-9)
+            quatd xformOp:orient = (0.9999999999999997, -8.477476847654684e-11, 2.5521402349916265e-8, 3.8450812874908265e-9)
+            double3 xformOp:translate = (0.15711002051830292, 0.26215001940727234, 0.2946500837802887)
+        }
+
+        over "steer_motor_link1"
+        {
+            vector3f physics:angularVelocity = (-1.09896385e-8, 0.0000012365882, -0.0028459693)
+            vector3f physics:velocity = (-3.0835923e-7, -2.6831024e-9, -4.6099666e-9)
+            quatd xformOp:orient = (0.9999999999998127, 6.063392973433158e-10, 6.955040982254516e-8, 6.080720527656778e-7)
+            double3 xformOp:translate = (0.1689700335264206, 0.28000012040138245, 0.16415006518363953)
+        }
+
+        over "wheel_motor_link1"
+        {
+            vector3f physics:angularVelocity = (-1.0876256e-8, -0.000101633574, -0.0028459693)
+            vector3f physics:velocity = (-1.5187523e-7, -4.7384287e-11, -4.609433e-9)
+            quatd xformOp:orient = (0.8791266419077937, -2.3353306632100863e-7, 0.47658823683299484, 5.372602541708161e-7)
+            double3 xformOp:translate = (0.1689700186252594, 0.28000012040138245, 0.06999999880790711)
+        }
+
+        over "steer_motor_link2"
+        {
+            vector3f physics:angularVelocity = (-1.08295675e-8, 0.0000012365904, -0.0022300358)
+            vector3f physics:velocity = (-2.413083e-7, -2.111027e-9, -4.5099506e-9)
+            quatd xformOp:orient = (0.9999999999998864, 5.513973496846318e-10, 7.03040719814073e-8, 4.7139014018336243e-7)
+            double3 xformOp:translate = (0.16897006332874298, -0.28000012040138245, 0.16415006518363953)
+        }
+
+        over "wheel_motor_link2"
+        {
+            vector3f physics:angularVelocity = (-1.0744681e-8, -0.00010120876, -0.0022300358)
+            vector3f physics:velocity = (8.319615e-10, -4.7233956e-11, -4.509982e-9)
+            quatd xformOp:orient = (0.8791233982840596, -1.6857092445031072e-7, 0.47659422005442376, 4.1688054806058915e-7)
+            double3 xformOp:translate = (0.1689700484275818, -0.28000012040138245, 0.0700000137090683)
+        }
+
+        over "steer_motor_link3"
+        {
+            vector3f physics:angularVelocity = (-9.753548e-9, 0.0000012365936, 0.0023572436)
+            vector3f physics:velocity = (-2.5514592e-7, -2.176372e-9, 6.145054e-9)
+            quatd xformOp:orient = (0.9999999999998855, -2.6793001543534153e-10, -6.166708141521142e-9, -4.784243802335938e-7)
+            double3 xformOp:translate = (-0.3270300626754761, -4.6566128730773926e-9, 0.16415006518363953)
+        }
+
+        over "wheel_motor_link3"
+        {
+            vector3f physics:angularVelocity = (-9.862956e-9, -0.00010081693, 0.0023572436)
+            vector3f physics:velocity = (8.615252e-10, 5.674444e-12, 6.1449685e-9)
+            quatd xformOp:orient = (0.8790672855002658, 2.8312594439875783e-7, 0.4766977108849362, -4.19254713862685e-7)
+            double3 xformOp:translate = (-0.3270300626754761, -4.773028194904327e-9, 0.0700000286102295)
+        }
+
+        over "torso_link1"
+        {
+            vector3f physics:angularVelocity = (-9.802778e-9, 0.009912959, -5.967157e-9)
+            vector3f physics:velocity = (0.000040045717, 6.808298e-11, -1.1316323e-7)
+            quatd xformOp:orient = (0.9999999999877757, -7.14638858669397e-10, 0.000004944542379806565, 1.2863044706539124e-8)
+            double3 xformOp:translate = (-0.0790320411324501, -5.122274160385132e-9, 0.3486501634120941)
+        }
+
+        over "torso_link2"
+        {
+            vector3f physics:angularVelocity = (-1.10318386e-8, 0.004755662, -5.9721224e-9)
+            vector3f physics:velocity = (0.000073602125, 1.1814179e-10, -4.360231e-7)
+            quatd xformOp:orient = (0.9999999999282388, -8.478201037664561e-10, 0.000011980076075183495, -9.036616910569408e-9)
+            double3 xformOp:translate = (-0.07902858406305313, -5.587935447692871e-9, 0.6986501574516296)
+        }
+
+        over "torso_link3"
+        {
+            vector3f physics:angularVelocity = (-9.670485e-9, -0.0027025745, -5.97239e-9)
+            vector3f physics:velocity = (0.000088660425, 1.592346e-10, -5.1859694e-10)
+            quatd xformOp:orient = (0.9999999998836224, -1.1866351672880335e-9, 0.000015256174562913045, -6.545817346462941e-8)
+            double3 xformOp:translate = (-0.07902020215988159, 0.00010049203410744667, 1.0486502408981324)
+        }
+
+        over "torso_link4"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.000074896234, 1.9344943e-8, 2.339095e-7)
+            quatd xformOp:orient = (0.9999999998833591, -1.0600161494945542e-9, 0.000015271825015026158, -2.3064662204171036e-7)
+            double3 xformOp:translate = (-0.07901715487241745, 3.440363798290491e-7, 1.148270344734192)
+        }
+
+        over "head_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.0000620627, -1.6316356e-8, -2.0224574e-7)
+            quatd xformOp:orient = (0.9961934925381328, 1.9013755890118465e-8, 0.0871695211907458, -2.2988583481676558e-7)
+            double3 xformOp:translate = (-0.08055093884468079, 3.4565709938760847e-7, 1.574800705909729)
+        }
+
+        over "camera_head_left_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.00006184403, 1.6588777e-7, 0.0000020253503)
+            quatd xformOp:orient = (0.40557918689422845, -0.5792267028204829, 0.5792286697736606, -0.4055811854735916)
+            double3 xformOp:translate = (-0.015409186482429504, 0.06000032648444176, 1.6249502658843995)
+        }
+
+        over "camera_head_right_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.00006230701, 1.6588763e-7, 0.000002025355)
+            quatd xformOp:orient = (0.40557918689422845, -0.5792267028204829, 0.5792286697736606, -0.4055811854735916)
+            double3 xformOp:translate = (-0.01540922001004219, -0.05999969691038132, 1.6249502658843995)
+        }
+
+        over "imu_torso_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.00007405525, 1.5451971e-7, 0.0000018865239)
+            quatd xformOp:orient = (0.9999999998832216, -1.0478516659166776e-9, 0.0000152808218672449, -2.3067609731885335e-7)
+            double3 xformOp:translate = (-0.040611106902360916, -0.0007416635635308921, 1.378529167175293)
+        }
+
+        over "left_arm_base_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.00007011174, -6.111096e-10, -1.013185e-8)
+            quatd xformOp:orient = (0.999999999883191, -9.931685966523006e-10, 0.000015282812881641936, -2.316101198672035e-7)
+            double3 xformOp:translate = (-0.07949403673410416, 0.09723447263240814, 1.4512905836105348)
+        }
+
+        over "left_arm_link1"
+        {
+            vector3f physics:angularVelocity = (-5.099033e-9, -0.008252329, 0.00022105424)
+            vector3f physics:velocity = (0.000069664195, -2.1508293e-11, 3.800294e-8)
+            quatd xformOp:orient = (0.999999999854852, -8.726604422943003e-10, 0.000017036741995294455, -2.1314515297963248e-7)
+            double3 xformOp:translate = (-0.07949400693178177, 0.1707344949245453, 1.4512905836105348)
+        }
+
+        over "left_arm_link2"
+        {
+            vector3f physics:angularVelocity = (-0.0034573402, -0.008252327, 0.00022117198)
+            vector3f physics:velocity = (0.000074248856, -0.0000019296424, -4.056187e-8)
+            quatd xformOp:orient = (0.9999999998543287, 0.000001020322135192221, 0.000017036917473539925, -2.118758954931647e-7)
+            double3 xformOp:translate = (-0.054481975734233856, 0.25199949741363525, 1.451289749145508)
+        }
+
+        over "left_arm_link3"
+        {
+            vector3f physics:angularVelocity = (-0.0034574824, -0.008252319, -0.0039442084)
+            vector3f physics:velocity = (0.0001024416, -0.000014136396, 8.040133e-7)
+            quatd xformOp:orient = (0.9999999998543159, 0.000001000822688767678, 0.00001702442670995456, 7.317868351271571e-7)
+            double3 xformOp:translate = (-0.07949790358543396, 0.25199973583221436, 1.335790491104126)
+        }
+
+        over "left_arm_link4"
+        {
+            vector3f physics:angularVelocity = (-0.0034573982, -0.07818046, -0.003944348)
+            vector3f physics:velocity = (0.00017174936, -0.000021175945, -0.0000014610688)
+            quatd xformOp:orient = (0.9999999992939809, 9.899814200615367e-7, 0.000037558154085864614, 6.657792760749561e-7)
+            double3 xformOp:translate = (-0.0795045793056488, 0.28706514835357666, 1.1412904024124146)
+        }
+
+        over "left_arm_link5"
+        {
+            vector3f physics:angularVelocity = (-0.00345949, -0.07818041, -0.0317687)
+            vector3f physics:velocity = (0.00032830916, -0.00002824018, 1.292246e-7)
+            quatd xformOp:orient = (0.9999999992559275, 9.738360412401822e-7, 0.000037582417589832275, 0.000008646298139875103)
+            double3 xformOp:translate = (-0.07951167225837708, 0.2520003318786621, 1.0462903738021851)
+        }
+
+        over "left_arm_link6"
+        {
+            vector3f physics:angularVelocity = (-0.00345941, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.00046575608, -0.000035256086, 0.0000025695333)
+            quatd xformOp:orient = (0.9999999992064249, 9.827783013485552e-7, 0.00003886844817146772, 0.000008684933619524278)
+            double3 xformOp:translate = (-0.07952343672513962, 0.22400063276290894, 0.8832403182983398)
+        }
+
+        over "left_arm_link7"
+        {
+            vector3f physics:angularVelocity = (-0.0034058527, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.0005480924, -0.000041270054, 0.000009415118)
+            quatd xformOp:orient = (0.9999999992055253, 9.52124537693435e-7, 0.000038892918393351276, 0.000008682382942967602)
+            double3 xformOp:translate = (-0.050023920834064484, 0.25200116634368896, 0.8832380533218384)
+        }
+
+        over "left_gripper_link"
+        {
+            vector3f physics:angularVelocity = (-0.0034058527, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.0006536075, -0.000041972642, -6.581164e-8)
+            quatd xformOp:orient = (0.9999999992037368, 9.521470895995326e-7, 0.00003893890052154424, 0.000008682267819322105)
+            double3 xformOp:translate = (-0.07953643053770065, 0.25200095772743225, 0.7225903630256653)
+        }
+
+        over "left_gripper_finger_link1"
+        {
+            vector3f physics:angularVelocity = (-0.0034058527, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.0007226871, -0.00004880308, 0.000008069379)
+            quatd xformOp:orient = (0.9999999992037587, 9.490759702886034e-7, 0.00003894162606775339, 0.000008667848845483078)
+            double3 xformOp:translate = (-0.07962824404239655, 0.2654540538787842, 0.6857003927230835)
+        }
+
+        over "left_gripper_finger_link2"
+        {
+            vector3f physics:angularVelocity = (-0.0034058527, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.00072443124, -0.000041654417, -0.000008211068)
+            quatd xformOp:orient = (0.9999999992040621, 9.58942394126327e-7, 0.00003894116953138073, 0.000008633741177177333)
+            double3 xformOp:translate = (-0.07945001870393753, 0.23854799568653107, 0.6857002735137939)
+        }
+
+        over "left_realsense_link"
+        {
+            vector3f physics:angularVelocity = (-0.0034058527, -0.082796514, -0.03176871)
+            vector3f physics:velocity = (0.00065406953, -0.00007157528, 0.0000770359)
+            quatd xformOp:orient = (-0.2164679543308037, 0.0003854582195546258, 0.976288048937957, -0.0017668250382150109)
+            double3 xformOp:translate = (-0.029026079922914505, 0.2548952102661133, 0.7277180910110473)
+        }
+
+        over "right_arm_base_link"
+        {
+            vector3f physics:angularVelocity = (-2.855139e-9, -0.0027025745, 0.00022105424)
+            vector3f physics:velocity = (0.00007112892, -2.6968665e-9, -3.561886e-8)
+            quatd xformOp:orient = (0.9999999998838663, -1.3315001029454624e-9, 0.000015238571206864713, -2.3078621732889848e-7)
+            double3 xformOp:translate = (-0.07949500530958176, -0.09723568707704544, 1.4512904644012452)
+        }
+
+        over "right_arm_link1"
+        {
+            vector3f physics:angularVelocity = (-7.0339556e-9, -0.008030549, 0.00022105424)
+            vector3f physics:velocity = (0.000071554074, -3.2865661e-9, -8.2119456e-8)
+            quatd xformOp:orient = (0.9999999998486501, -9.663381264251381e-10, 0.000017396540092372573, -2.45473076227021e-7)
+            double3 xformOp:translate = (-0.07949503511190414, -0.1707356870174408, 1.4512905836105348)
+        }
+
+        over "right_arm_link2"
+        {
+            vector3f physics:angularVelocity = (-0.002310571, -0.008030549, 0.00022113461)
+            vector3f physics:velocity = (0.000076161166, -0.0000013153686, 5.2654334e-9)
+            quatd xformOp:orient = (0.9999999998484199, 6.381890849489962e-7, 0.000017398044941163372, -2.4680059469023635e-7)
+            double3 xformOp:translate = (-0.05550706386566162, -0.25200071930885315, 1.4512896299362184)
+        }
+
+        over "right_arm_link3"
+        {
+            vector3f physics:angularVelocity = (-0.0023104707, -0.0080305515, 0.0030872005)
+            vector3f physics:velocity = (0.00010361133, -0.00000891061, 7.6572337e-7)
+            quatd xformOp:orient = (0.9999999998464806, 6.493647924538807e-7, 0.000017442270982111977, -0.0000015441331314243931)
+            double3 xformOp:translate = (-0.07949906587600708, -0.2520005404949188, 1.335790491104126)
+        }
+
+        over "right_arm_link4"
+        {
+            vector3f physics:angularVelocity = (-0.0023107212, -0.08257111, 0.0030871008)
+            vector3f physics:velocity = (0.0001978289, -0.000014850871, -8.540952e-7)
+            quatd xformOp:orient = (0.9999999992126128, 6.516784183916605e-7, 0.00003965011266187384, -0.0000014893594168671864)
+            double3 xformOp:translate = (-0.07950574159622192, -0.21694228053092957, 1.1412905216217042)
+        }
+
+        over "right_arm_link5"
+        {
+            vector3f physics:angularVelocity = (-0.0023102975, -0.08257112, 0.008415391)
+            vector3f physics:velocity = (0.00035717664, -0.000019292942, -1.7200509e-7)
+            quatd xformOp:orient = (0.9999999992083941, 6.527500944033853e-7, 0.00003963604120087617, -0.0000034307343973973065)
+            double3 xformOp:translate = (-0.07951337844133377, -0.25200018286705017, 1.0462904930114747)
+        }
+
+        over "right_arm_link6"
+        {
+            vector3f physics:angularVelocity = (-0.0023103326, -0.087600484, 0.008415384)
+            vector3f physics:velocity = (0.00048646267, -0.000022637885, 0.0000026642822)
+            quatd xformOp:orient = (0.9999999991509863, 6.405171102366788e-7, 0.000041059029784029715, -0.0000034312252466586433)
+            double3 xformOp:translate = (-0.07952611148357391, -0.22399894893169403, 0.8832404375076294)
+        }
+
+        over "right_arm_link7"
+        {
+            vector3f physics:angularVelocity = (-0.0026916068, -0.087600484, 0.008415416)
+            vector3f physics:velocity = (0.0005733475, -0.00002460451, 0.000009961035)
+            quatd xformOp:orient = (0.9999999991505837, 7.334692449201005e-7, 0.00004106738010802037, -0.000003430006316984906)
+            double3 xformOp:translate = (-0.0500263012945652, -0.2520001530647278, 0.8832379341125488)
+        }
+
+        over "right_gripper_link"
+        {
+            vector3f physics:angularVelocity = (-0.0026916068, -0.087600484, 0.008415416)
+            vector3f physics:velocity = (0.0006849882, -0.000028998467, -7.0541624e-8)
+            quatd xformOp:orient = (0.99999999914728, 7.333828770937123e-7, 0.000041147784542278417, -0.00000342957541473826)
+            double3 xformOp:translate = (-0.07953952252864838, -0.25199970602989197, 0.7225903034210205)
+        }
+
+        over "right_gripper_finger_link1"
+        {
+            vector3f physics:angularVelocity = (-0.0026916068, -0.087600484, 0.008415416)
+            vector3f physics:velocity = (0.00075923046, -0.000031682204, 0.000008511238)
+            quatd xformOp:orient = (0.999999999147126, 7.294875344865124e-7, 0.000041150722148870756, -0.000003440043769749506)
+            double3 xformOp:translate = (-0.07963117957115173, -0.23854659497737885, 0.6857002735137939)
+        }
+
+        over "right_gripper_finger_link2"
+        {
+            vector3f physics:angularVelocity = (-0.0026916068, -0.087600484, 0.008415416)
+            vector3f physics:velocity = (0.0007587666, -0.00003188183, -0.000008663613)
+            quatd xformOp:orient = (0.999999999147007, 7.435156593239354e-7, 0.00004115002797904841, -0.000003479712657458346)
+            double3 xformOp:translate = (-0.07945360243320465, -0.26545268297195435, 0.6857002735137939)
+        }
+
+        over "right_realsense_link"
+        {
+            vector3f physics:angularVelocity = (-0.0026916068, -0.087600484, 0.008415416)
+            vector3f physics:velocity = (0.00069960486, -0.000021640495, 0.000081197504)
+            quatd xformOp:orient = (-0.21647016285365397, 0.0003973312620861708, 0.9762875588416763, -0.0017644185845183042)
+            double3 xformOp:translate = (-0.029029080644249916, -0.24910664558410645, 0.7277178525924682)
+        }
+
+        over "joints"
+        {
+            over "steer_motor_joint1"
+            {
+                float state:angular:physics:position = 0.00006961025
+                float state:angular:physics:velocity = -0.0028459628
+            }
+
+            over "steer_motor_joint2"
+            {
+                float state:angular:physics:position = 0.000053951375
+                float state:angular:physics:velocity = -0.0022300296
+            }
+
+            over "steer_motor_joint3"
+            {
+                float state:angular:physics:position = -0.000054901102
+                float state:angular:physics:velocity = 0.0023572491
+            }
+
+            over "torso_joint1"
+            {
+                float state:angular:physics:position = 0.00056587526
+                float state:angular:physics:velocity = 0.009911721
+            }
+
+            over "torso_joint2"
+            {
+                float state:angular:physics:position = 0.00080621056
+                float state:angular:physics:velocity = -0.005157295
+            }
+
+            over "torso_joint3"
+            {
+                float state:angular:physics:position = -0.00037534992
+                float state:angular:physics:velocity = 0.0074582375
+            }
+
+            over "torso_joint4"
+            {
+                float state:angular:physics:position = -0.000018934024
+                float state:angular:physics:velocity = 0.00022106021
+            }
+
+            over "left_arm_joint1"
+            {
+                float state:angular:physics:position = 0.00020094414
+                float state:angular:physics:velocity = -0.005549755
+            }
+
+            over "right_arm_joint1"
+            {
+                float state:angular:physics:position = 0.00024730517
+                float state:angular:physics:velocity = -0.0053279744
+            }
+
+            over "left_arm_joint2"
+            {
+                float state:angular:physics:position = 0.00011361067
+                float state:angular:physics:velocity = -0.003457335
+            }
+
+            over "right_arm_joint2"
+            {
+                float state:angular:physics:position = 0.00007550642
+                float state:angular:physics:velocity = -0.002310564
+            }
+
+            over "left_arm_joint3"
+            {
+                float state:angular:physics:position = 0.00010573563
+                float state:angular:physics:velocity = -0.0041653793
+            }
+
+            over "right_arm_joint3"
+            {
+                float state:angular:physics:position = -0.00014711551
+                float state:angular:physics:velocity = 0.002866065
+            }
+
+            over "left_arm_joint4"
+            {
+                float state:angular:physics:position = 0.0023511616
+                float state:angular:physics:velocity = -0.069928154
+            }
+
+            over "right_arm_joint4"
+            {
+                float state:angular:physics:position = 0.0025473514
+                float state:angular:physics:velocity = -0.074540555
+            }
+
+            over "left_arm_joint5"
+            {
+                float state:angular:physics:position = 0.0009147617
+                float state:angular:physics:velocity = -0.027824344
+            }
+
+            over "right_arm_joint5"
+            {
+                float state:angular:physics:position = -0.00022223618
+                float state:angular:physics:velocity = 0.0053282883
+            }
+
+            over "left_arm_joint6"
+            {
+                float state:angular:physics:position = 0.00014839023
+                float state:angular:physics:velocity = -0.0046161097
+            }
+
+            over "right_arm_joint6"
+            {
+                float state:angular:physics:position = 0.0001606437
+                float state:angular:physics:velocity = -0.0050293645
+            }
+
+            over "left_arm_joint7"
+            {
+                float state:angular:physics:position = -0.0000035516703
+                float state:angular:physics:velocity = 0.000053557134
+            }
+
+            over "right_arm_joint7"
+            {
+                float state:angular:physics:position = 0.000010724336
+                float state:angular:physics:velocity = -0.00038127406
+            }
+
+            over "left_gripper_finger_joint1"
+            {
+                float state:linear:physics:position = 3.005234e-8
+                float state:linear:physics:velocity = -8.6738976e-7
+            }
+
+            over "left_gripper_finger_joint2"
+            {
+                float state:linear:physics:position = -7.904392e-9
+                float state:linear:physics:velocity = 1.0627413e-7
+            }
+
+            over "right_gripper_finger_joint1"
+            {
+                float state:linear:physics:position = 3.626594e-8
+                float state:linear:physics:velocity = -0.0000012269925
+            }
+
+            over "right_gripper_finger_joint2"
+            {
+                float state:linear:physics:position = -2.4460915e-8
+                float state:linear:physics:velocity = 2.0904419e-7
+            }
+        }
+    }
+
+    def DomeLight "DomeLight"
+    {
+        float inputs:intensity = 600
+    }
+
+    def DistantLight "DistantLight"
+    {
+        float inputs:intensity = 1800
+        float3 xformOp:rotateXYZ = (-35, 25, 25)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+}
+

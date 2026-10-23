@@ -1,0 +1,114 @@
+{
+  "mode": "mobile",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "rest_contact",
+      "pass_": true,
+      "height": -5.652010440826416e-05,
+      "tilt_rad": 1.3823114206640772e-05
+    },
+    {
+      "name": "steering",
+      "pass_": true,
+      "positions": {
+        "steer_motor_joint1": 0.11323413997888565,
+        "steer_motor_joint2": 0.1087632104754448,
+        "steer_motor_joint3": 0.10060840100049973
+      }
+    },
+    {
+      "name": "rolling",
+      "pass_": true,
+      "distance_m": 0.09170229732990265,
+      "height": -8.851289749145508e-05,
+      "tilt_rad": 7.228031691171304e-05,
+      "wheel_velocities": {
+        "wheel_motor_joint1": 0.2085329294204712,
+        "wheel_motor_joint2": 0.26582300662994385,
+        "wheel_motor_joint3": 0.23832617700099945
+      },
+      "mean_wheel_velocities": {
+        "wheel_motor_joint1": 0.4342600107192993,
+        "wheel_motor_joint2": 0.43793002764383954,
+        "wheel_motor_joint3": 0.4348612229029338
+      }
+    }
+  ],
+  "config": {
+    "physics_dt": 0.004166666666666667,
+    "settle_steps": 720,
+    "joint_steps": 480,
+    "angular_amplitude_rad": 0.08,
+    "linear_amplitude_m": 0.02,
+    "angular_tolerance_rad": 0.04,
+    "linear_tolerance_m": 0.002,
+    "wheel_test_velocity_rad_s": 0.5,
+    "wheel_velocity_tolerance_rad_s": 0.15,
+    "root_height_tolerance_m": 0.06,
+    "root_tilt_limit_rad": 0.2,
+    "joint_limit_tolerance": 0.002,
+    "rationale": "240 Hz resolves finger and wheel contacts; 3 s settle and 2 s per joint. Small axis tests avoid large-pose torque saturation. Tracking tolerances are simulation smoke-test limits, not hardware accuracy claims."
+  },
+  "asset": "/home/xq/work/code/projects/r1pro/outputs/isaacsim_5_1/r1pro_2026.usd",
+  "version": [
+    "5.1.0",
+    "rc.19",
+    "5",
+    "1",
+    "0",
+    "rc",
+    "19",
+    "release.26219.9c81211b.gl"
+  ],
+  "dof_names": [
+    "steer_motor_joint1",
+    "steer_motor_joint2",
+    "steer_motor_joint3",
+    "torso_joint1",
+    "wheel_motor_joint1",
+    "wheel_motor_joint2",
+    "wheel_motor_joint3",
+    "torso_joint2",
+    "torso_joint3",
+    "torso_joint4",
+    "left_arm_joint1",
+    "right_arm_joint1",
+    "left_arm_joint2",
+    "right_arm_joint2",
+    "left_arm_joint3",
+    "right_arm_joint3",
+    "left_arm_joint4",
+    "right_arm_joint4",
+    "left_arm_joint5",
+    "right_arm_joint5",
+    "left_arm_joint6",
+    "right_arm_joint6",
+    "left_arm_joint7",
+    "right_arm_joint7",
+    "left_gripper_finger_joint1",
+    "left_gripper_finger_joint2",
+    "right_gripper_finger_joint1",
+    "right_gripper_finger_joint2"
+  ],
+  "physics_backend": "physx (5.1 PhysicsContext)",
+  "settled_root_position": [
+    -0.00874951109290123,
+    -3.504028427414596e-06,
+    -5.6415796279907227e-05
+  ],
+  "images": [
+    {
+      "file": "front.png",
+      "mean": 202.9526199001736,
+      "std": 34.918617524935065
+    },
+    {
+      "file": "back.png",
+      "mean": 201.70632215711805,
+      "std": 37.0885617227154
+    }
+  ],
+  "physics_steps": 3610,
+  "physics_seconds": 15.041667451150715
+}
